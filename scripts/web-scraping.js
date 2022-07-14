@@ -32,22 +32,20 @@ async function scrapeWebsite(websiteURL) {
     await page.goto(websiteURL);
 
     let content = await page.evaluate(() => {
+        // Source: GamesBeat + GameDeveloper
         let title = Array.from(document.querySelectorAll("h1.article-title"), item => item.textContent);
         let text = Array.from(document.querySelectorAll("div.article-content p"), item => item.textContent);
         let content = {
-            "title":    title,
-            "text":     text,
+            "title"     : title,
+            "text"      : text,
         };
         return content;
     });
 
-    content.text = filterText(content.text);
-    printContent(content);
-
     await browser.close();
+
+    return content;
 }
 
-// ===== Call main functions =====
-// scrapeWebsite("https://venturebeat.com/2022/07/07/red-dead-online-scales-back-support/");
-scrapeWebsite("https://www.gamedeveloper.com/culture/more-developers-are-pushing-back-against-player-toxicity");
+export { scrapeWebsite, filterText, printContent };
 
