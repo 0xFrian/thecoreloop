@@ -33,11 +33,15 @@ async function scrapeWebsite(websiteURL) {
 
     let content = await page.evaluate(() => {
         // Source: GamesBeat + GameDeveloper
-        let title = Array.from(document.querySelectorAll("h1.article-title"), item => item.textContent);
-        let text = Array.from(document.querySelectorAll("div.article-content p"), item => item.textContent);
+        let title = Array.from(
+                        document.querySelectorAll("h1.article-title"), 
+                        item => item.textContent);
+        let text = Array.from(
+                        document.querySelectorAll("div.article-content p"), 
+                        item => item.textContent);
         let content = {
-            "title"     : title,
-            "text"      : text,
+            "title" : title,
+            "text"  : text,
         };
         return content;
     });
