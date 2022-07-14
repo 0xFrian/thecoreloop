@@ -1,2 +1,7 @@
 .git
 node_modules
+
+# For personal testing
+scripts/dump.js     
+scripts/practice.js
+
