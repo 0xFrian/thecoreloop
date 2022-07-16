@@ -34,13 +34,13 @@ function printContent(content) {
 /**
     * Scrapes textual content from an article given its website URL
     *
-    * @param {string} websiteURL : String representing the article's website URL
+    * @param {string} webURL : String representing the article's website URL
     * @return {object} content : Object containing title and content of an article
     */
-async function scrapeWebsite(websiteURL) {
+async function parseWeb(webURL) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(websiteURL);
+    await page.goto(webURL);
 
     let content = await page.evaluate(() => {
         let title = Array.from(
