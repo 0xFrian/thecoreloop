@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>thecoreloop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="banner" style="margin-top: 3vh">
+                <img src="thecoreloop-logo.png" height="576px" width="1024px"/>
+            </div>
+            <div class="user">
+                <div class="form-group">
+                    <form action="/" method="POST" id="article">
+                        <label for="webURL" class="form-label" name="link"></label> 
+                        <input type="text" name="webURL" class="form-field" placeholder="https://www.website.xyz" value=<%= webURL %>>
+                    </form>
+                </div>
+                <button type="submit" form="article" class="go-button">
+                    GO 
+                </button>
+                <button type="reset" class="reset-button">
+                    RESET 
+                </button>
+            </div>
+            <div class="content">
+                <h2><%= content.title %></h2>
+                <% content.text.forEach(paragraph => { %>
+                    <p><%= paragraph %></p>
+                <% }) %>
+            </div>
+        </div>
+    </body>
+</html>
+
