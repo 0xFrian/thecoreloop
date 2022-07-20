@@ -1,35 +1,26 @@
 const puppeteer = require("puppeteer"); 
 
 /**
-    * Parses through string array, separating each entry with 1 newline-character ("\n")
+    * Filters contents of an article by applying the following steps: 
+    *  (1) Convert arrays into strings
+    *  (2) Remove leading/trailing whitespaces 
+    *  (3) Separates paragraphs with blank lines for better visiblity
     *
-    * @param   {array}  text             : String array containing text content 
-    * @return  {array}  textArr_filtered : String array containing filtered text content
+    * @param   {array}  data_raw : String array containing contents of an article
+    * @return  {array}  data     : String array containing filtered contents of an article
     */
-function filterText(text_raw) {
-    text_raw = text_raw.map(item => item.trim()); // Remove leading/trailing whitespace
-    let text = [];
-    for (let i = 0; i < text_raw.length; i++) {
-        let line = text_raw[i];
-        if (line.length > 0) {
-            text.push(text); 
-        }
-    }
-    return text;
-}
+function filterData(data_raw) {
+    let title = data_raw.title.join();
+    let text = data_raw.text
+                .map(item => item.trim())           // Remove leading/trailing whitespace
+                .filter(item => item.length > 0)    // Remove empty items
+                .join("\n\n");                      // Convert array into 1 long string 
 
-/**
-    * Parses through JSON object representing an article, console-logging its properties: 
-    *  title and content
-    *
-    * @param   {object}  content : Object containing article's title and content
-    * @return  {none}
-    */
-function printContent(content) {
-    console.log("Title: ");
-    console.log(content.title.join() + "\n");
-    console.log("Content: ");
-    console.log(content.text.join("\n\n"));
+    let data = {
+        title: title,
+        text: text,
+    };
+    return data;
 }
 
 /**
@@ -43,7 +34,7 @@ async function parseWeb(webURL) {
     const page = await browser.newPage();
     await page.goto(webURL);
 
-    let content = await page.evaluate(() => {
+    let data_raw = await page.evaluate(() => {
         let title = Array.from(
                         document.querySelectorAll("h1.article-title"), 
                         item => item.textContent);
@@ -56,14 +47,14 @@ async function parseWeb(webURL) {
         };
         return content;
     });
-    content.text = filterText(content.text);
+    data = filterData(data_raw);
     await browser.close();
-    return content;
+    return data;
 }
 
 module.exports = {
     parseWeb, 
-    filterText,
+    filterData,
     printContent,
 }
 
