@@ -55,6 +55,5 @@ async function parseWeb(webURL) {
 module.exports = {
     parseWeb, 
     filterData,
-    printContent,
 }
 
