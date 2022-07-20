@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-// JSON object containing key phrases for labelling contents of an announcement
-const DICTIONARY_GENERAL = {
+// thecoreloop general key phrases
+const DICT_TCL = {
     "title"     : [ "A Look at Games #" ],
-    "subject"   : [
+    "category"   : [
         "🔦 Spotlight 🌟",
         "💰 Fundraising 🧧",
         "👾 Game Releases 🎮",
@@ -13,11 +13,11 @@ const DICTIONARY_GENERAL = {
         "💎 Storytime 🔎",
         "✨ Web 3️⃣ + Meta 🌎",
     ],
-    "link"      : [ "https" ],
+    "link"      : [ "https://" ],
 }
 
-// JSON object containing key phrases for date-related content (days, months, year)
-const DICTIONARY_DATE = {
+// Date-related key phrases
+const DICT_DATE = {
     "day"       : [ 
         "Monday", "Tuesday", "Wednesday", "Thursday",
         "Friday", "Saturday", "Sunday" 
@@ -32,81 +32,62 @@ const DICTIONARY_DATE = {
 };
 
 /**
-    * Returns contents of given file, applying some filtering criteria: split("\n"), trim(), and non-zero length
+    * Determines if given line represents a day (e.g. "Wednesday")
     *
-    * @param {string} filePath      : File path of file to be read in
-    * @return {array} dataArr_filt  : String array containing contents of the given file
+    * @param   {string}   line  : Line from announcement
+    * @return  {boolean}        : True if <line> represents a day, else False
     */
-function readAnnouncement(filePath) {
-    try {
-        let dataStr_raw = fs.readFileSync(filePath, { encoding: "utf8" });
-        let dataArr_filt = dataStr_raw
-                            .split("\n")                        // Separate line-by-line
-                            .filter(item => item.length > 0)    // Remove emtpy lines
-                            .map(item => item.trim());          // Remove surrounding whitespaces
-        return dataArr_filt;
-    } catch (err) {
-        console.log("   Error:", err);
-    }
-}
-
-/**
-    * Returns boolean if given segment represents a day of the week 
-    *
-    * @param {string} segment   : line from announcement 
-    * @return {boolean}         : true if given segment represents a day of the week, else false
-    */
-function isDay(segment) {
-    for (let i = 0; i < Object.keys(DICTIONARY_DATE["day"]).length; i++) {
-        let keyPhrase = DICTIONARY_DATE["day"][i];
-        if (segment.includes(keyPhrase) && segment.split(" ").length == 1) {
-            // Check if segment includes keyPHrase and consists of only 1 word
+function isDay(line) {
+    for (let i = 0; i < Object.keys(DICT_DATE["day"]).length; i++) {
+        let keyPhrase = DICT_DATE["day"][i];
+        if (line.includes(keyPhrase) && line.split(" ").length == 1) {
+            // Check if <line> contains day and conists only of 1 word
             return true;
         }
     }
     return false;
 }
 
-/** * Returns boolean if given segment represents a date (e.g. July 15th 2022)
+/** * Determines if given line represents a date (e.g. "July 13th 2022")
     * 
-    * @param {string} segment   : line from announcement 
-    * @return {boolean}         : true if given segment represents a date, else false
+    * @param   {string}   line  : Line from announcement 
+    * @return  {boolean}        : True if <line> represents a date, else False
     */
-function isDate(segment) {
+function isDate(line) {
     // Look for a month
     let monthFound = false;
-    for (let i = 0; i < Object.keys(DICTIONARY_DATE["month"]).length; i++) {
-        let keyPhrase = DICTIONARY_DATE["month"][i];
-        if (segment.includes(keyPhrase)) {
+    for (let i = 0; i < Object.keys(DICT_DATE["month"]).length; i++) {
+        let keyPhrase = DICT_DATE["month"][i];
+        if (line.includes(keyPhrase)) {
             monthFound = true;
         }
     };
     // Look for a year
     let yearFound = false
-    for (let j = 0; j < Object.keys(DICTIONARY_DATE["year"]).length; j++) {
-        let keyPhrase = DICTIONARY_DATE["year"][j];
-        if (segment.includes(keyPhrase)) {
+    for (let j = 0; j < Object.keys(DICT_DATE["year"]).length; j++) {
+        let keyPhrase = DICT_DATE["year"][j];
+        if (line.includes(keyPhrase)) {
             yearFound = true;
         }
     }
 
-    if (monthFound && yearFound && segment.split(" ").length == 3) {
-        // Check if segment contains month and year, and consists only of 3 words
+    if (monthFound && yearFound && line.split(" ").length == 3) {
+        // Check if line contains month and year, and consists only of 3 words
         return true;
     }
     return false;
 }
 
 /** 
-    * Returns true if given segment represents a title (e.g. A Look at Games #9️⃣)
+    * Determines if given line represents a title (e.g. "A Look at Games #9️⃣")
     *
-    * @param {string} segment   : line from announcement 
-    * @return {boolean}         : true if given segment represents a title, else false
+    * @param   {string}   line  : Line from announcement 
+    * @return  {boolean}        : True if <line> represents a title, else False
     */
-function isTitle(segment) {
-    for (let i = 0; i < Object.keys(DICTIONARY_GENERAL["title"]).length; i++) {
-        let keyPhrase = DICTIONARY_GENERAL["title"][i];
-        if (segment.includes(keyPhrase)) {
+function isTitle(line) {
+    for (let i = 0; i < Object.keys(DICT_TCL["title"]).length; i++) {
+        let keyPhrase = DICT_TCL["title"][i];
+        if (line.includes(keyPhrase)) {
             return true
         } 
     }
@@ -114,15 +95,15 @@ function isTitle(segment) {
 }
 
 /** 
-    * Returns true if given segment represents a subject (e.g. 🌊 MARKET ☎️)h
+    * Determines if given line represents a category (e.g. "🌊 MARKET ☎️")
     *
-    * @param {string} segment   : line from announcement 
-    * @return {boolean}         : true if given segment represents a subject, else false
+    * @param   {string}   line  : Line from announcement 
+    * @return  {boolean}        : True if <line> represents a category, else False
     */
-function isSubject(segment) {
-    for (let i = 0; i < Object.keys(DICTIONARY_GENERAL["subject"]).length; i++) {
-        let keyPhrase = DICTIONARY_GENERAL["subject"][i];
-        if (segment.includes(keyPhrase)) {
+function isCategory(line) {
+    for (let i = 0; i < Object.keys(DICT_TCL["category"]).length; i++) {
+        let keyPhrase = DICT_TCL["category"][i];
+        if (line.includes(keyPhrase)) {
             return true;
         }
     }
@@ -130,15 +111,15 @@ function isSubject(segment) {
 }
 
 /**
-    * Returns true if given segment represents a link (e.g. https:website.xyz) 
+    * Determines if given line represents a link or website URL (e.g. https:website.xyz) 
     *
-    * @param {string} segment   : line from annnouncement
-    * @return {boolean}         : true if given segment represent a link, else false
+    * @param   {string}   line  : Line from annnouncement
+    * @return  {boolean}        : True if <line> represent a link, else False
     */
-function isLink(segment) {
-    for (let i = 0; i < Object.keys(DICTIONARY_GENERAL["link"]).length; i++) {
-        let keyPhrase = DICTIONARY_GENERAL["link"][i];
-        if (segment.includes(keyPhrase)) {
+function isLink(line) {
+    for (let i = 0; i < Object.keys(DICT_TCL["link"]).length; i++) {
+        let keyPhrase = DICT_TCL["link"][i];
+        if (line.includes(keyPhrase)) {
             return true;
         }
     }
@@ -146,92 +127,124 @@ function isLink(segment) {
 }
 
 /**
-    * Returns a label for the given segment (e.g. 🌊 MARKET ☎️  would return "subject") 
+    * Determines what type of content a line contains (e.g. 🌊 MARKET ☎️  --> "category")
     *
-    * @param {string} segment   : line from announcement 
-    * @return {string}          : label for the given segment 
+    * @param   {string}  line   : Line from announcement 
+    * @return  {string}         : String representing type of content 
     */
-function labelSegment(segment) {
-    if (isDay(segment)) {
+function identifyContent(line) {
+    if (isDay(line)) {
         return "day"; 
-    } else if (isDate(segment)) {
+    } else if (isDate(line)) {
         return "date";
-    } else if (isTitle(segment)) {
+    } else if (isTitle(line)) {
         return "title";
-    } else if (isSubject(segment)) {
-        return "subject";
-    } else if (isLink(segment)) {
+    } else if (isCategory(line)) {
+        return "category";
+    } else if (isLink(line)) {
         return "link";
     } else {
-        // If no labels have been found, then assume "caption" 
+        // If no key phrases found, then assume "caption" 
         return "caption";
     }
 }
 
-/** 
-    * Parses through announcement, organizing its contents neatly into a JSON object for better visbility and later reference
+/**
+    * Reads a Markdown file containing an annnouncement
     *
-    * @param {array} dataArr            : array containing the contents of the announcement
-    * @return {object} announcement     : JSON object containing contents of announcement 
+    * @param   {string}  filePath   : File path of Markdown file
+    * @return  {array}   data       : String array with each element representing 
+    *                                  a line in the text file
     */
-function parseAnnouncement(dataArr) {
-    let announcement = {};
-    let content = [];
-    let contentEntry = {};
-    let items = []; 
-    let itemEntry = {};
-    let subject = "";
-    let nextSubject = false;
-    let lastSubject = false;
+function readAnnouncement(filePath) {
+    try {
+        let data_raw = fs.readFileSync(filePath, { encoding: "utf8" });
+        let data = dataStr_raw
+                    .split("\n")                        // Separate line-by-line
+                    .filter(item => item.length > 0)    // Remove emtpy lines
+                    .map(item => item.trim());          // Remove surrounding whitespaces
+        return data;
+    } catch (err) {
+        console.log("   Error:", err);
+    }
+}
 
-    for (let i = 0; i < dataArr.length; i++) {
-        let segment = dataArr[i];
-        let label = labelSegment(segment);
-        if (label == "title" && !announcement.hasOwnProperty("title")) {
-            // Check if there's only one "title" label
-            announcement.title = segment;
-        } else if (label == "day" && !announcement.hasOwnProperty("day")) {
-            // Check if there's only one "day" label
-            announcement.day = segment;
-        } else if (label == "date" && !announcement.hasOwnProperty("date")) {
-            // Check if there's only one "date" label
-            announcement.date = segment;
+/** 
+    * Parses through an announcement, organizing its contents neatly into 
+    *  a JSON object for better visbility and later reference
+    *
+    * @param   {array}   data           : array containing contents of announcement
+    * @return  {object}  announcement   : JSON object containing contents of announcement 
+    */
+function parseAnnouncement(data) {
+    let announcement = {};      
+    // Look at announcement-json-structure.md to see how contents are organized
+
+    let content = [];           // array of <articleGroup> objects
+    let categoryGroup = {};     // JSON object containing a category and array of articles
+
+    let articles = [];          // array of <article> objects
+    let article = {};           // JSON object representing an article with a category 
+                                //  and link (URL to the web page)
+
+    let category = "";          // string representing current category being parsed
+    let nextCategory = false;   // true if current line marks beginning of next category
+    let lastCategory = false;   // true if current line marks end of file, and thus last category
+
+    for (let i = 0; i < data.length; i++) {
+        let line = dataArr[i];                      // current line of announcement
+        let lineContent = identifyContent(line);    // type of content <line> represents
+
+        if (lineContent == "title" && !announcement.hasOwnProperty("title")) {
+            // If <announcement.title> not assigned yet, then assign it
+            announcement.title = line;
+        } else if (lineContent == "day" && !announcement.hasOwnProperty("day")) {
+            // If <announcement.day> not assigned yet, then assign it
+            announcement.day = line;
+        } else if (lineContent == "date" && !announcement.hasOwnProperty("date")) {
+            // If <announcement.date> not assigned yet, then assign it
+            announcement.date = line;
         } else {
-            if (label == "subject") {
-                if (!contentEntry.hasOwnProperty("subject")) {
-                    // If subject property hasn't been assigned yet, then assign it
-                    contentEntry.subject = segment;
+            if (lineContent == "category") {
+                if (!contentEntry.hasOwnProperty("category")) {
+                    // If <category> not assigned yet, then assign it
+                    articleGroup.category = line;
                 } else {
-                    // If subject property has already been assigned, then add current subject and move onto the next subject
-                    nextSubject = true;
+                    // If <category> already assigned, then append current
+                    //  <categoryGroup> to <content>, and then move on
+                    nextCategory = true;
                 }
             } else if (label == "caption") {
-                itemEntry.caption = segment;
+                article.caption = line;
             } else if (label == "link") {
-                itemEntry.link = segment;
+                article.link = line;
             } 
             if (itemEntry.hasOwnProperty("caption") && itemEntry.hasOwnProperty("link")) {
-                // If caption and link properties have been added, then append to list of items 
-                items.push(itemEntry)
-                itemEntry = {};
+                // If <article.caption> and <article.link> already assigned, then 
+                //  append to <articles>
+                articles.push(article)
+                article = {};
             }
-            if (i == dataArr.length-1) {
-                lastSubject = true;
+            if (i == data.length-1) {
+                lastCategory = true;
             }
-            if (nextSubject || lastSubject) {
-                // Check if it's time to add the current subject to content array, which means either:
-                //  (1) Next subject detected
-                //  (2) Last subject detected
-                //  
-                // Add current subject to content array 
-                contentEntry.items = items;         
-                content.push(contentEntry);         
-                // Reset variables
-                nextSubject = false;                
-                contentEntry = {};
-                items = [];
-                // Assign new subject
-                contentEntry.subject = segment;
+            if (nextCategory || lastCategory) {
+                // Check if it's time to add current <categoryGroup> to <content>, 
+                //  which means either: 
+                //  (1) Next category detected
+                //  (2) Last category detected
+                
+                // Add current <categoryGroup> to <content>
+                articleGroup.articles = articles;         
+                content.push(articleGroup);         
+
+                if(nextCategory) {
+                    // If there is a next category, then reset variables and assign new category
+                    nextCategory = false;
+                    articleGroup = {};
+                    articles = [];
+                    articleGroup.category = line;
+                }
             }
         }
     }
