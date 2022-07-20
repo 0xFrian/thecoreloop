@@ -7,8 +7,7 @@ async function main() {
     let data = await web_parser.parseWeb(webURL);
     let data_string = data.title + "\n\n" + data.text;
 
-    console.log("Web Data: ");
-    const FILE_NAME = "gamesbeat_web.md";
+    const FILE_NAME = "gamesbeat_web.txt";
     const FILE_PATH = path.join(__dirname, "results", FILE_NAME);
     fs.writeFile(FILE_PATH, data_string, (err) => {
         if (err) {

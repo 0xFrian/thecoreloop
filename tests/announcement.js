@@ -9,7 +9,7 @@ async function main() {
     const announcement = ann_parser.parseAnnouncement(content);
     const announcement_tree = treeify.asTree(announcement, true);
 
-    const FILE_NAME = "announcement.md";
+    const FILE_NAME = "announcement.txt";
     const WRITE_PATH = path.join(__dirname, "results", FILE_NAME);
     fs.writeFile(WRITE_PATH, announcement_tree, (err) => {
         if (err) {
