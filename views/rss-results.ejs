@@ -30,6 +30,7 @@
                     <h4><%= entry.title %></h4>
                     <p>by <%= entry.author %></p>
                     <p><%= entry.content %></p>
+                    <img width="<%= entry.image.width %>" height="<%= entry.image.height %>" src="<%= entry.image.src %>">
                     <a href=<%= entry.link%>>Link</a>
                     <hr>
                 <% }) %>
