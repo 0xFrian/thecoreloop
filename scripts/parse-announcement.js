@@ -34,8 +34,8 @@ const DICT_DATE = {
 /**
     * Determines if given line represents a day (e.g. "Wednesday")
     *
-    * @param   {string}   line  : Line from announcement
-    * @return  {boolean}        : True if <line> represents a day, else False
+    * @param   {string}   line : Line from announcement
+    * @return  {boolean}       : True if <line> represents a day, else False
     */
 function isDay(line) {
     for (let i = 0; i < Object.keys(DICT_DATE["day"]).length; i++) {
@@ -50,8 +50,8 @@ function isDay(line) {
 
 /** * Determines if given line represents a date (e.g. "July 13th 2022")
     * 
-    * @param   {string}   line  : Line from announcement 
-    * @return  {boolean}        : True if <line> represents a date, else False
+    * @param   {string}   line : Line from announcement 
+    * @return  {boolean}       : True if <line> represents a date, else False
     */
 function isDate(line) {
     // Look for a month
@@ -81,8 +81,8 @@ function isDate(line) {
 /** 
     * Determines if given line represents a title (e.g. "A Look at Games #9️⃣")
     *
-    * @param   {string}   line  : Line from announcement 
-    * @return  {boolean}        : True if <line> represents a title, else False
+    * @param   {string}   line : Line from announcement 
+    * @return  {boolean}       : True if <line> represents a title, else False
     */
 function isTitle(line) {
     for (let i = 0; i < Object.keys(DICT_TCL["title"]).length; i++) {
@@ -97,8 +97,8 @@ function isTitle(line) {
 /** 
     * Determines if given line represents a category (e.g. "🌊 MARKET ☎️")
     *
-    * @param   {string}   line  : Line from announcement 
-    * @return  {boolean}        : True if <line> represents a category, else False
+    * @param   {string}   line : Line from announcement 
+    * @return  {boolean}       : True if <line> represents a category, else False
     */
 function isCategory(line) {
     for (let i = 0; i < Object.keys(DICT_TCL["category"]).length; i++) {
@@ -113,8 +113,8 @@ function isCategory(line) {
 /**
     * Determines if given line represents a link or website URL (e.g. https:website.xyz) 
     *
-    * @param   {string}   line  : Line from annnouncement
-    * @return  {boolean}        : True if <line> represent a link, else False
+    * @param   {string}   line : Line from annnouncement
+    * @return  {boolean}       : True if <line> represent a link, else False
     */
 function isLink(line) {
     for (let i = 0; i < Object.keys(DICT_TCL["link"]).length; i++) {
@@ -129,8 +129,8 @@ function isLink(line) {
 /**
     * Determines what type of content a line contains (e.g. 🌊 MARKET ☎️  --> "category")
     *
-    * @param   {string}  line   : Line from announcement 
-    * @return  {string}         : String representing type of content 
+    * @param   {string}  line  : Line from announcement 
+    * @return  {string}        : String representing type of content 
     */
 function identifyContent(line) {
     if (isDay(line)) {
@@ -152,14 +152,14 @@ function identifyContent(line) {
 /**
     * Reads a Markdown file containing an annnouncement
     *
-    * @param   {string}  filePath   : File path of Markdown file
-    * @return  {array}   data       : String array with each element representing 
+    * @param   {string}  filePath : File path of Markdown file
+    * @return  {array}   data     : String array with each element representing 
     *                                  a line in the text file
     */
 function readAnnouncement(filePath) {
     try {
         let data_raw = fs.readFileSync(filePath, { encoding: "utf8" });
-        let data = dataStr_raw
+        let data = data_raw
                     .split("\n")                        // Separate line-by-line
                     .filter(item => item.length > 0)    // Remove emtpy lines
                     .map(item => item.trim());          // Remove surrounding whitespaces
@@ -173,8 +173,8 @@ function readAnnouncement(filePath) {
     * Parses through an announcement, organizing its contents neatly into 
     *  a JSON object for better visbility and later reference
     *
-    * @param   {array}   data           : array containing contents of announcement
-    * @return  {object}  announcement   : JSON object containing contents of announcement 
+    * @param   {array}   data         : array containing contents of announcement
+    * @return  {object}  announcement : JSON object containing contents of announcement 
     */
 function parseAnnouncement(data) {
     let announcement = {};      

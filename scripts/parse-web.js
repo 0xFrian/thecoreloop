@@ -3,26 +3,27 @@ const puppeteer = require("puppeteer");
 /**
     * Parses through string array, separating each entry with 1 newline-character ("\n")
     *
-    * @param {array} textArr : String array containing text content (raw/unfiltered)
-    * @return {array} textArr_filtered : String array containing filtered text content
+    * @param   {array}  text             : String array containing text content 
+    * @return  {array}  textArr_filtered : String array containing filtered text content
     */
-function filterText(textArr) {
-    let textArr_copy = textArr.map(item => item.trim()); // Remove leading/trailing whitespace
-    let textArr_filt = [];
-    for (let i = 0; i < textArr_copy.length; i++) {
-        let text = textArr_copy[i];
-        if (text.length > 0) {
-            textArr_filt.push(text); 
+function filterText(text_raw) {
+    text_raw = text_raw.map(item => item.trim()); // Remove leading/trailing whitespace
+    let text = [];
+    for (let i = 0; i < text_raw.length; i++) {
+        let line = text_raw[i];
+        if (line.length > 0) {
+            text.push(text); 
         }
     }
-    return textArr_filt;
+    return text;
 }
 
 /**
-    * Parses through JSON object representing an article, console-logging its properties: title and content
+    * Parses through JSON object representing an article, console-logging its properties: 
+    *  title and content
     *
-    * @param {object} content : Object containing title and content of an article
-    * @return {none}
+    * @param   {object}  content : Object containing article's title and content
+    * @return  {none}
     */
 function printContent(content) {
     console.log("Title: ");
@@ -32,10 +33,10 @@ function printContent(content) {
 }
 
 /**
-    * Scrapes textual content from an article given its website URL
+    * Parses an article's textual content given its website URL
     *
-    * @param {string} webURL : String representing the article's website URL
-    * @return {object} content : Object containing title and content of an article
+    * @param   {string}  webURL  : String representing the article's website URL
+    * @return  {object}  content : Object containing title and content of an article
     */
 async function parseWeb(webURL) {
     const browser = await puppeteer.launch();
@@ -61,7 +62,7 @@ async function parseWeb(webURL) {
 }
 
 module.exports = {
-    scrapeWebsite, 
+    parseWeb, 
     filterText,
     printContent,
 }
