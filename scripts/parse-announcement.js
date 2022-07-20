@@ -184,7 +184,8 @@ function parseAnnouncement(data) {
     let categoryGroup = {};     // JSON object containing a category and array of articles
 
     let articles = [];          // array of <article> objects
-    let article = {};           // JSON object representing an article with a category 
+    let articleGroup = {};
+    let article = {};           // JSON object representing an article with a caption 
                                 //  and link (URL to the web page)
 
     let category = "";          // string representing current category being parsed
@@ -192,34 +193,29 @@ function parseAnnouncement(data) {
     let lastCategory = false;   // true if current line marks end of file, and thus last category
 
     for (let i = 0; i < data.length; i++) {
-        let line = dataArr[i];                      // current line of announcement
+        let line = data[i];                      // current line of announcement
         let lineContent = identifyContent(line);    // type of content <line> represents
 
         if (lineContent == "title" && !announcement.hasOwnProperty("title")) {
-            // If <announcement.title> not assigned yet, then assign it
             announcement.title = line;
         } else if (lineContent == "day" && !announcement.hasOwnProperty("day")) {
-            // If <announcement.day> not assigned yet, then assign it
             announcement.day = line;
         } else if (lineContent == "date" && !announcement.hasOwnProperty("date")) {
-            // If <announcement.date> not assigned yet, then assign it
             announcement.date = line;
         } else {
             if (lineContent == "category") {
-                if (!contentEntry.hasOwnProperty("category")) {
-                    // If <category> not assigned yet, then assign it
-                    articleGroup.category = line;
+                if (!categoryGroup.hasOwnProperty("category")) {
+                    categoryGroup.category = line;
                 } else {
-                    // If <category> already assigned, then append current
-                    //  <categoryGroup> to <content>, and then move on
+                    // If <category> already assigned, then move onto next category
                     nextCategory = true;
                 }
-            } else if (label == "caption") {
+            } else if (lineContent == "caption") {
                 article.caption = line;
-            } else if (label == "link") {
+            } else if (lineContent == "link") {
                 article.link = line;
             } 
-            if (itemEntry.hasOwnProperty("caption") && itemEntry.hasOwnProperty("link")) {
+            if (article.hasOwnProperty("caption") && article.hasOwnProperty("link")) {
                 // If <article.caption> and <article.link> already assigned, then 
                 //  append to <articles>
                 articles.push(article)
@@ -235,15 +231,15 @@ function parseAnnouncement(data) {
                 //  (2) Last category detected
                 
                 // Add current <categoryGroup> to <content>
-                articleGroup.articles = articles;         
-                content.push(articleGroup);         
+                categoryGroup.articles = articles;         
+                content.push(categoryGroup);         
 
                 if(nextCategory) {
                     // If there is a next category, then reset variables and assign new category
                     nextCategory = false;
-                    articleGroup = {};
+                    categoryGroup = {};
                     articles = [];
-                    articleGroup.category = line;
+                    categoryGroup.category = line;
                 }
             }
         }
