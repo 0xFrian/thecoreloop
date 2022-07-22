@@ -1,0 +1,55 @@
+├─ 0
+│  └─ 0
+│     ├─ title: Why mediation is the primary front in the mobile advertising wars post-ATT
+│     ├─ thumbnail: https://mobiledevmemo.com/wp-content/uploads/2022/07/mdm-mediation-mobile-advertising-1024x683.jpg
+│     ├─ caption: A look at mediation in mobile advertising
+│     └─ link: https://mobiledevmemo.com/why-mediation-is-the-primary-front-in-the-mobile-advertising-wars-post-att/
+├─ 1
+│  ├─ 0
+│  │  ├─ title: 
+│  │  ├─ thumbnail: undefined
+│  │  ├─ caption: A look at the Entertainment Software Association (ESA) -- the lobbying group for gaming co
+│  │  └─ link: https://www.axios.com/2022/07/21/esa-no-e3-lobbying
+│  ├─ 1
+│  │  ├─ title: 
+│  │  ├─ thumbnail: undefined
+│  │  ├─ caption: A look at Ubisoft sales down 9.8% in Q1 2022
+│  │  └─ link: https://www.gamesindustry.biz/articles/2022-07-21-ubisoft-sales-down-9-8-percent-in-q1-2022
+│  ├─ 2
+│  │  ├─ title: 
+│  │  ├─ thumbnail: undefined
+│  │  ├─ caption: A look at Runescape creator, Jagex, acquiring Pipeworks Studio
+│  │  └─ link: https://venturebeat.com/2022/07/21/jagex-acquires-pipeworks-studio-to-grow-in-north-america/
+│  └─ 3
+│     ├─ title: 
+│     ├─ thumbnail: undefined
+│     ├─ caption: A look at European game sales
+│     └─ link: https://www.gamesindustry.biz/articles/2022-07-21-elden-ring-pok-mon-legends-arceus-drove-european-sales-during-the-first-half-of-2022
+├─ 2
+│  └─ 0
+│     ├─ title: 
+│     ├─ thumbnail: undefined
+│     ├─ caption: A look at FIFA23 excluding Russian teams
+│     └─ link: https://www.gamesindustry.biz/articles/2022-07-21-fifa-23-will-exclude-russian-teams
+├─ 3
+│  └─ 0
+│     ├─ title: 
+│     ├─ thumbnail: undefined
+│     ├─ caption: A look at the top app downloads in the US, China, Japan, and UK
+│     └─ link: https://mobilegamer.biz/exclusive-sensor-tower-charts-the-president-on-top-as-dbz-dokkan-battle-revenue-surges/
+└─ 4
+   ├─ 0
+   │  ├─ title: 
+   │  ├─ thumbnail: https://venturebeat.com/wp-content/uploads/2022/07/star-2.jpg?w=800&resize=1200%2C672&strip=all
+   │  ├─ caption: A look at Star Atlas doubling down on web3 gaming
+   │  └─ link: https://venturebeat.com/2022/07/21/star-atlas-doubles-down-on-web3-gaming-with-dao-and-marketplace/
+   ├─ 1
+   │  ├─ title: 
+   │  ├─ thumbnail: https://venturebeat.com/wp-content/uploads/2022/07/aglet-Ryan-Picture-for-Press.jpg?w=400&resize=600%2C899&strip=all
+   │  ├─ caption: A look at Aglet passing 3.5M active users in its Sneakerverse
+   │  └─ link: https://venturebeat.com/2022/07/21/aglet-passes-3-5m-active-users-in-its-web3-sneakerverse/
+   └─ 2
+      ├─ title: 
+      ├─ thumbnail: https://venturebeat.com/wp-content/uploads/2022/07/usain-bolt-5.jpg?w=800&resize=1200%2C664&strip=all
+      ├─ caption: A look at Usain Bolt's web3 move2earn fitness platform -- Step App
+      └─ link: https://venturebeat.com/2022/07/21/usain-bolt-helps-launch-move-to-earn-nft-fitness-platform-step-app/
