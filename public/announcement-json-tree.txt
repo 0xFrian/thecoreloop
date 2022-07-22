@@ -1,0 +1,49 @@
+├─ title: A Look at Games #14
+├─ day: Thursday
+├─ date: July 21st 2022
+└─ content
+   ├─ 0
+   │  ├─ category: 🔦 Spotlight 🌟
+   │  └─ articles
+   │     └─ 0
+   │        ├─ caption: A look at mediation in mobile advertising
+   │        └─ link: https://mobiledevmemo.com/why-mediation-is-the-primary-front-in-the-mobile-advertising-wars-post-att/
+   ├─ 1
+   │  ├─ category: 🌊 MARKET ☎️
+   │  └─ articles
+   │     ├─ 0
+   │     │  ├─ caption: A look at the Entertainment Software Association (ESA) -- the lobbying group for gaming co
+   │     │  └─ link: https://www.axios.com/2022/07/21/esa-no-e3-lobbying
+   │     ├─ 1
+   │     │  ├─ caption: A look at Ubisoft sales down 9.8% in Q1 2022
+   │     │  └─ link: https://www.gamesindustry.biz/articles/2022-07-21-ubisoft-sales-down-9-8-percent-in-q1-2022
+   │     ├─ 2
+   │     │  ├─ caption: A look at Runescape creator, Jagex, acquiring Pipeworks Studio
+   │     │  └─ link: https://venturebeat.com/2022/07/21/jagex-acquires-pipeworks-studio-to-grow-in-north-america/
+   │     └─ 3
+   │        ├─ caption: A look at European game sales
+   │        └─ link: https://www.gamesindustry.biz/articles/2022-07-21-elden-ring-pok-mon-legends-arceus-drove-european-sales-during-the-first-half-of-2022
+   ├─ 2
+   │  ├─ category: 💎 Storytime 🔎
+   │  └─ articles
+   │     └─ 0
+   │        ├─ caption: A look at FIFA23 excluding Russian teams
+   │        └─ link: https://www.gamesindustry.biz/articles/2022-07-21-fifa-23-will-exclude-russian-teams
+   ├─ 3
+   │  ├─ category: 🌈 Platforms 🏔
+   │  └─ articles
+   │     └─ 0
+   │        ├─ caption: A look at the top app downloads in the US, China, Japan, and UK
+   │        └─ link: https://mobilegamer.biz/exclusive-sensor-tower-charts-the-president-on-top-as-dbz-dokkan-battle-revenue-surges/
+   └─ 4
+      ├─ category: ✨ Web 3️⃣ + Meta 🌎
+      └─ articles
+         ├─ 0
+         │  ├─ caption: A look at Star Atlas doubling down on web3 gaming
+         │  └─ link: https://venturebeat.com/2022/07/21/star-atlas-doubles-down-on-web3-gaming-with-dao-and-marketplace/
+         ├─ 1
+         │  ├─ caption: A look at Aglet passing 3.5M active users in its Sneakerverse
+         │  └─ link: https://venturebeat.com/2022/07/21/aglet-passes-3-5m-active-users-in-its-web3-sneakerverse/
+         └─ 2
+            ├─ caption: A look at Usain Bolt's web3 move2earn fitness platform -- Step App
+            └─ link: https://venturebeat.com/2022/07/21/usain-bolt-helps-launch-move-to-earn-nft-fitness-platform-step-app/
