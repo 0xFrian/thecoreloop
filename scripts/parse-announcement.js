@@ -180,11 +180,10 @@ function parseAnnouncement(data) {
     let announcement = {};      
     // Look at announcement-json-structure.md to see how contents are organized
 
-    let content = [];           // array of <articleGroup> objects
+    let content = [];           // array of <categoryGroup> objects
     let categoryGroup = {};     // JSON object containing a category and array of articles
 
     let articles = [];          // array of <article> objects
-    let articleGroup = {};
     let article = {};           // JSON object representing an article with a caption 
                                 //  and link (URL to the web page)
 
