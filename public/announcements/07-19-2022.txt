@@ -1,0 +1,52 @@
+A Look at Games #12
+
+Tuesday
+July 19th 2022
+
+🔦 Spotlight 🌟
+A look at GDC 2023 Core Concept talks. GDC is one of the TOP conferences in gaming.  Pro-tip: the prev talks could be found at the GDC Vault.  A lot of good content there
+https://www.gamedeveloper.com/gdc/gdc-2023-core-concepts-talk-submissions-are-now-open
+
+
+🌊 MARKET ☎️
+A look at the M&A Activity in H1 2022 by Drake Star Partners
+https://venturebeat.com/2022/07/19/drake-star-partners-gaming-ma-and-investments-hit-651-deals-worth-107b-in-first-half/
+
+A look at how investment in game companies soared in H1 2022
+https://www.axios.com/2022/07/19/video-game-deals-drakestar-2022
+
+
+💎 Storytime 🔎
+A look at LoL: Wild Rift hitting $500M in lifetime rev. 
+https://mobilegamer.biz/league-of-legends-wild-rift-hits-500m-in-lifetime-player-spend/
+
+A look at InnoGames' salary transparency report.  It's worth a look.  $87k for expert game developer
+https://www.gamesindustry.biz/articles/2022-07-19-innogames-shares-salary-transparency-report-as-a-matter-of-fairness
+
+
+🌈 Platforms 🏔 
+A look at a group of Blizzard staffers filing for Union election.  QA is a vital yet almost always underrated and underappreciated division.
+https://www.gamesindustry.biz/articles/2022-07-19-blizzard-albany-staffers-file-for-union-election-with-the-national-labor-relations-board
+
+A look at Google Play letting app devs used 3rd party payments to comply with EU -- sadly its just for NON-GAMING apps.
+https://www.gamedeveloper.com/business/google-play-will-let-app-devs-use-third-party-payments-to-comply-with-new-eu-rules
+
+A look at PlayStation Store's lawsuit for stopping 3rdparty retailers to sell digital codes for PS games.
+https://www.gamedeveloper.com/business/playstation-store-class-action-lawsuit-dismissed
+
+
+✨ Web 3️⃣ + Meta 🌎
+A look at TenthPlanet, a studio founded by former TikTok gaming leaders
+https://venturebeat.com/2022/07/19/tenthplanet-unveils-two-ambitious-blockchain-games/
+
+
+💰 Fundraising 🧧
+A look at Zebedee, a blockchain game payments system built on Bitcion
+https://venturebeat.com/2022/07/19/zebedee-raised-35m-from-investors-including-square-enix-for-blockchain-game-payments/
+
+A look at Nekcom's $8M round with Galaxy Interactive leading
+https://venturebeat.com/2022/07/19/nekcom-raises-8-million-to-fuel-game-development-and-expansion/
+
+👾 Game Releases 🎮
+A look at Stray, a game in which you play as an orange kitty cat navigating thru the underground world in a cyberpunk future
+https://venturebeat.com/2022/07/19/stray-review-kitty-caper-compels-keeps-campaign-cursory/

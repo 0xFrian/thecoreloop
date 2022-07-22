@@ -1,0 +1,63 @@
+A Look at Games #5️⃣
+
+Friday
+July 1st 2022 
+
+
+🌊 MARKET ☎️
+A look at some bullish takes on gaming. Forecast YoY PC down 3%.  Console flat.  Mobile down 1.8% 
+https://www.gamesindustry.biz/articles/2022-07-01-analysts-the-games-industry-is-not-going-anywhere-in-the-face-of-a-recession
+
+A look at GameRefinery's mobile game market review for june 2022
+https://www.pocketgamer.biz/news/79102/game-refinery-publishes-mobile-game-market-review-for-june-2022/
+
+A look at Unity's lay off.  Reason: Unity Ad expected to decrease
+https://venturebeat.com/2022/06/29/unity-lays-off-hundreds-to-prepare-for-ad-weakness/
+
+A look at AppLovin's & Adjust's layoffs.  Ad spend is expected to decrease
+https://www.gamesindustry.biz/articles/2022-07-01-applovin-and-adjust-lay-off-12-percent-of-their-workforce
+
+A look at AR, and it's not looking great.  Niantic layoffs + slower growth + declining rev
+https://www.gamedeveloper.com/extended-reality/ar-game-market-growth-might-be-stalling
+
+
+🌈 Platforms 🏔 
+A look at Samsung's gaming hub (again).  But news is that Amazon's Luna is added to the list. P cool to see Xbox, Nvidia, Amazon, Stadia all in one roof.
+https://venturebeat.com/2022/06/30/samsung-gaming-hub-brings-amazon-luna-to-2022-smart-devices/
+
+A look at Cocos game engine for Nintendo.  More game engines = more democratization of game dev. 
+https://venturebeat.com/2022/06/30/cocos-game-engine-finally-supports-nintendo-switch/
+
+A look at Nintendo's top mobile games.  Fire Emblem heroes brought home $1B in lifetime spending with 17.8M installs
+https://www.gamesindustry.biz/articles/2022-06-30-fire-emblem-heroes-first-nintendo-mobile-title-to-hit-usd1bn-in-spending
+
+A look at Twitch's new 'Guest Star' feature.  This is a native feature that twitch needed for a long time
+https://venturebeat.com/2022/06/30/twitchs-new-guest-star-feature-turns-livestreams-into-game-shows/
+
+A look at Amazon's Prime Gaming.  Every big tech co got a sub, and they're not going away.
+https://venturebeat.com/2022/06/30/prime-gaming-offers-maniac-mansion-and-mega-man-11-in-july/
+
+A look at second screens, possibly a second source of revenue.  See Elden Ring's MOUNTAINS of community content, guides, walkthrus
+https://www.gamesindustry.biz/articles/2022-07-01-in-praise-of-the-second-screen-opinion
+
+
+💎 Storytime 🔎
+A look at some best practices in building a community.
+https://venturebeat.com/2022/06/30/why-success-in-a-crowded-game-market-relies-on-building-community-vb-live%ef%bf%bc/
+
+A look at Exploding Kittens going transmedia.  Elan Lee is bringing Exploding Kittens to Netflix but as a game.
+https://www.gamesindustry.biz/articles/2022-06-28-building-an-exploding-kittens-transmedia-universe
+
+A look at Uma Musume Pretty Derby.  Netting $2.3M in 24Hrs.  Could be new collect genre-defining game in South Korea
+https://www.pocketgamer.biz/news/79111/uma-musume-pretty-derbys-south-korean-release-23-million-within-24-hours/
+
+A look at some lessons on live ops design for late-gate games.
+https://www.gamedeveloper.com/blogs/late-game-lessons-of-live-service-design
+
+
+✨ Web3️⃣ + Meta🌎
+A look at the Monaverse.  Kinda like a sandbox except you get to build then sell your world.
+https://venturebeat.com/2022/06/30/mona-raises-14-6m-for-metaverse-platform-for-creators/
+
+A look at Echo3D.  Cloud storage & streaming of 3D AR/VR assets.  Tool for cloud authoring
+https://venturebeat.com/2022/07/01/echo3d-raises-5-5m-for-cloud-authorning-tools-for-3d-ar-and-vr-content/
