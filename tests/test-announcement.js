@@ -16,7 +16,7 @@ async function main() {
     // const WRITE_PATH = path.join(__dirname, "results", FILE_NAME);
     fs.writeFile(WRITE_PATH, announcement_tree, (err) => {
         if (err) {
-            console.log(err);
+            console.log(`  ❌ Error: ${err}`);
         } else {
             console.log(`✅ Success: written ${FILE_NAME} file`);
         }
