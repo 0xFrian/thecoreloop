@@ -21,12 +21,13 @@
                 <button type="submit" form="article" class="go-button">
                     GO 
                 </button>
-                <button type="reset" class="reset-button">
+                <button type="submit" class="reset-button">
                     RESET 
                 </button>
             </div>
             <div class="content">
                 <h2><%= content.title %></h2>
+                <img src="<%= content.thumbnail %>">
                 <% content.text.forEach(paragraph => { %>
                     <p><%= paragraph %></p>
                 <% }) %>
